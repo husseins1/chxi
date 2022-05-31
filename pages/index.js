@@ -17,19 +17,19 @@ import { getHome } from "../services";
 
 
 
-export default function Home({hero}) {
-console.log(hero)
-  
+export default function Home({hero:{heroes,aboutUs,categories,galleries,words}}) {
+
+  console.log(heroes)
   return (
     <div>
       <Navbar />
-      <Header />
-      <AboutUs />
-      <SpecialMenu />
-      <Chef />
+      <Header content={heroes[0]} />
+      <AboutUs content={aboutUs} />
+      <SpecialMenu content={categories} />
+      <Chef content={words[0]} />
       <Intro />
       <Laurels />
-      <Gallery />
+      <Gallery content={galleries} />
       <FindUs />
       <Footer />
     </div>
