@@ -64,7 +64,7 @@ const Chef = () => (
     </style>
     <div className="app__bg app__wrapper section__padding">
       <div className="app__wrapper_img app__wrapper_img-reverse">
-        <img src='/chef.png' alt="chef_image" />
+        <img src='/chef.jpg' alt="chef_image" />
       </div>
       <div className="app__wrapper_info">
         <SubHeading title="Chef's word" />

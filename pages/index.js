@@ -11,13 +11,18 @@ import {
   SpecialMenu,
 } from "../container";
 import { Navbar } from "../components";
+import { getHome } from "../services";
 
 
-export default function Home() {
+
+
+
+export default function Home({hero}) {
+console.log(hero)
+  
   return (
     <div>
       <Navbar />
-      
       <Header />
       <AboutUs />
       <SpecialMenu />
@@ -29,4 +34,14 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const hero = await getHome("en");
+
+  return {
+    props: {
+      hero,
+    },
+  };
 }

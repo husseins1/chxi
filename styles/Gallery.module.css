@@ -1,0 +1,22 @@
+.gallery__image_icon {
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    opacity: 0;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.app__gallery_images_card:hover .gallery__image_icon {
+    opacity: 1;
+}
+.gallery__arrow_icon {
+    color: var(--color-golden);
+    font-size: 2rem;
+    cursor: pointer;
+    background: var(--color-black);
+    border-radius: 5px;
+}
+
+.gallery__arrow_icon:hover {
+    color: var(--color-white);
+}
