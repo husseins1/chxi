@@ -16,17 +16,23 @@ export const getHome = async (lang) => {
         historyOf
         aboutUs
       }
-      categoriesConnection(
-        where: { title: "Cocktails", OR: { title: "Cocktails" } }
+      categories(
+        where: {
+          OR: [
+            { title: "Wine & Beer" }
+            { title: "Cocktails" }
+            { title: "كوكتيل" }
+            { title: "عصائر والشرابت" }
+          ]
+        }
+        locales: [$lang]
       ) {
-        edges {
-          node {
-            items(locales: [$lang]) {
-              title
-              types
-              price
-            }
-          }
+        id
+        title
+        items {
+          title
+          price
+          types
         }
       }
       galleries {

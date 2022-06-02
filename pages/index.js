@@ -17,14 +17,14 @@ import { getHome } from "../services";
 
 
 
-export default function Home({hero:{heroes,aboutUs,categories,galleries,words}}) {
+export default function Home({hero:{heroes,abouts,categories,galleries,words}}) {
 
-  console.log(heroes)
+  
   return (
     <div>
       <Navbar />
       <Header content={heroes[0]} />
-      <AboutUs content={aboutUs} />
+      <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
       <Chef content={words[0]} />
       <Intro />

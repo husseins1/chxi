@@ -2,7 +2,7 @@
 
 
 
-const AboutUs = () => (
+const AboutUs = ({content}) => (
   <>
     <style jsx>
       {`
@@ -102,9 +102,7 @@ const AboutUs = () => (
           <h1 className="headtext__cormorant">About Us</h1>
           <img src="/spoon.png" alt="about_spoon" className="spoon__img" />
           <p className="p__opensans">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
-            pharetra adipiscing ultrices vulputate posuere tristique. In sed
-            odio nec aliquet eu proin mauris et.
+            {content.aboutUs}
           </p>
           <button type="button" className="custom__button">
             Know More
@@ -119,9 +117,7 @@ const AboutUs = () => (
           <h1 className="headtext__cormorant">Our History</h1>
           <img src="/spoon.png" alt="about_spoon" className="spoon__img" />
           <p className="p__opensans">
-            Adipiscing tempus ullamcorper lobortis odio tellus arcu volutpat.
-            Risus placerat morbi volutpat habitasse interdum mi aliquam In sed
-            odio nec aliquet.
+            {content.historyOf}
           </p>
           <button type="button" className="custom__button">
             Know More

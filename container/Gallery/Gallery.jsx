@@ -5,7 +5,7 @@ import { SubHeading } from '../../components';
 
 import styles from "../../styles/Gallery.module.css"
 
-const Gallery = () => {
+const Gallery = ({content}) => {
  
   const scrollRef = useRef(null);
 
@@ -188,12 +188,7 @@ const Gallery = () => {
         </div>
         <div className="app__gallery-images">
           <div className="app__gallery-images_container" ref={scrollRef}>
-            {[
-              "/gallery01.png",
-              "/gallery02.png",
-              "/gallery03.png",
-              "/gallery04.png",
-            ].map((image, index) => (
+            {content.map((image, index) => (
               <div
                 className={
                   "app__gallery-images_card flex__center" +
@@ -202,7 +197,7 @@ const Gallery = () => {
                 }
                 key={`gallery_image-${index + 1}`}
               >
-                <img src={image} alt="gallery_image" />
+                <img loading="lazy" src={image.img.url} alt="gallery_image" />
                 <BsInstagram className={styles.gallery__image_icon} />
               </div>
             ))}
