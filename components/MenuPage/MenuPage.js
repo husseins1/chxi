@@ -1,5 +1,5 @@
 import MenuItem from "../MenuItem/MenuItem";
-import {data} from "../../constants"
+
 
 export default function MenuPage({showModel,content,title}) {
   return (

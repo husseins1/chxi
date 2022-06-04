@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import { SubHeading, MenuItem } from '../../components';
-import { data } from '../../constants';
 
 
 const SpecialMenu = ({ content }) =>{ 

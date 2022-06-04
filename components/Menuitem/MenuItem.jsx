@@ -1,7 +1,4 @@
 
-
-
-
 const MenuItem = ({ title, price, tags,showModel }) => (
   <>
     <style jsx>

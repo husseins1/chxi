@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import gericht from "../../assets/gericht.png";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
