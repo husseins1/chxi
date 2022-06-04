@@ -86,7 +86,7 @@ a {
 }
 
 .app__bg {
-  background: url('/bg.png');
+  background: url('/bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: repeat;
