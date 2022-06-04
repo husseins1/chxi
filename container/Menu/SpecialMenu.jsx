@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { SubHeading, Menuitem } from '../../components';
+import { SubHeading, Item } from '../../components';
 
 
 const SpecialMenu = ({ content }) =>{ 
@@ -110,7 +110,7 @@ const SpecialMenu = ({ content }) =>{
           <p className="app__specialMenu-menu_heading">{content[0].title}</p>
           <div className="app__specialMenu_menu_items">
             {content[0].items.map((wine, index) => (
-              <Menuitem
+              <Item
                 key={wine.title + index}
                 title={wine.title}
                 price={wine.price}
@@ -128,7 +128,7 @@ const SpecialMenu = ({ content }) =>{
           <p className="app__specialMenu-menu_heading">{content[1].title}</p>
           <div className="app__specialMenu_menu_items">
             {content[1].items.map((cocktail, index) => (
-              <Menuitem
+              <Item
                 key={cocktail.title + index}
                 title={cocktail.title}
                 price={cocktail.price}

@@ -4,13 +4,13 @@ import FooterOverlay from './Footer/FooterOverlay';
 
 import Navbar from './Navbar/Navbar';
 import Model from "./Model/Model"
-import Menuitem from './Menuitem/Menuitem';
+import Item from './Item/Item';
 
 export {
   SubHeading,
   Newsletter,
   FooterOverlay,
-  Menuitem,
+  Item,
   Navbar,
   Model
 };

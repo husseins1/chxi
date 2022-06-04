@@ -1,5 +1,5 @@
 
-const Menuitem = ({ title, price, tags,showModel }) => (
+const Item = ({ title, price, tags,showModel }) => (
   <>
     <style jsx>
       {`
@@ -63,4 +63,4 @@ const Menuitem = ({ title, price, tags,showModel }) => (
   </>
 );
 
-export default Menuitem;
+export default Item;

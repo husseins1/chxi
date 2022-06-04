@@ -1,4 +1,4 @@
-import Menuitem from "../Menuitem/Menuitem";
+import Item from "../Item/Item";
 
 
 export default function MenuPage({showModel,content,title}) {
@@ -50,7 +50,7 @@ export default function MenuPage({showModel,content,title}) {
         <p className="app__specialMenu-menu_heading">{title}</p>
         <div className="app__specialMenu_menu_items">
           {content.map((item, index) => (
-            <Menuitem 
+            <Item 
 
             showModel={showModel.bind(null, item)}
               key={item.title + index}
