@@ -54,7 +54,7 @@ https://www.instagram.com/chixi.rest/"
     </div>
 
     <div className="app__wrapper_img">
-      <img src="/findus.png" alt="finus_img" />
+      <img src="/findus.jpg" alt="finus_img" />
     </div>
   </div>
 );

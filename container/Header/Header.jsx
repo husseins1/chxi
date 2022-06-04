@@ -74,7 +74,7 @@ const Header = ({content}) => {
       </div>
 
       <div className="app__wrapper_img">
-        <img src='/welcome.png' alt="header_img" />
+        <img src='/welcome.jpg' alt="header_img" />
       </div>
     </div>
   </>

@@ -6,6 +6,7 @@ import { Model } from "../../components";
 import { getItems, getMenu } from "../../services";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 export default function Menu({ result: { categories } }) {
   const [select, setSelect] = useState(categories[0].title);
   const [items, setItems] = useState([]);
@@ -79,13 +80,18 @@ export default function Menu({ result: { categories } }) {
           }
         `}
       </style>
+      <Head>
+        <title>Chxi Menu</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="مطعم تشكسي, مطعم عراقي لكل عراقي" />
+      </Head>
       <div dir="rtl" className={`container ${styles.en}`}>
         <div style={{ textAlign: "center" }}>
           <Link href={"/ar"}>
             <img src="/logo.svg" alt="logo" className={styles.logo} />
           </Link>
         </div>
-        <h1 className="heading">{ar?"قائمة الطعام":"Menu"}</h1>
+        <h1 className="heading">{ar ? "قائمة الطعام" : "Menu"}</h1>
         <div className="catagories">
           {categories.map((catagory, index) => (
             <div
@@ -108,7 +114,7 @@ export default function Menu({ result: { categories } }) {
           ))}
         </div>
         <div className="food">
-          <MenuPage  title={select} content={items} showModel={showModel} />
+          <MenuPage title={select} content={items} showModel={showModel} />
         </div>
         <Model show={show} handleClose={hideModel}>
           <div style={{ textAlign: "center" }}>
