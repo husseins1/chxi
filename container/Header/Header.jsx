@@ -1,13 +1,20 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import { SubHeading } from '../../components';
 
 
-
-const Header = ({content}) => (
+const Header = ({content}) => {
+  const router = useRouter()
+  
+  return(
   <>
     <style jsx>
       {`
+      #home{
+        padding: 1rem 6rem;
+      }
         .app__header {
           background-color: var(--color-black);
         }
@@ -62,7 +69,7 @@ const Header = ({content}) => (
           {content.text}{" "}
         </p>
         <button type="button" className="custom__button">
-          Explore Menu
+          <Link href={router.route.includes("ar")?"/ar/menu":"/menu"}>{router.route.includes("ar")?"اكتشف قائمة الطعام":"Explore Menu"}</Link>
         </button>
       </div>
 
@@ -71,6 +78,6 @@ const Header = ({content}) => (
       </div>
     </div>
   </>
-);
+);}
 
 export default Header;

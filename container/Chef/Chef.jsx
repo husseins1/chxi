@@ -5,7 +5,7 @@ import { SubHeading } from '../../components';
 
 
 
-const Chef = ({content}) => (
+const Chef = ({content,ar}) => (
   <>
     <style jsx>
       {`
@@ -67,7 +67,7 @@ const Chef = ({content}) => (
         <img src='/chef.jpg' alt="chef_image" />
       </div>
       <div className="app__wrapper_info">
-        <SubHeading title="Chef's word" />
+        <SubHeading title={ar?"كلمة":"Word"} />
         <h1 className="headtext__cormorant">{content.slogan}</h1>
 
         <div className="app__chef-content">
@@ -85,7 +85,7 @@ const Chef = ({content}) => (
         <div className="app__chef-sign">
           <p>{content.name}</p>
           <p className="p__opensans">{content.who}</p>
-          <img src='/sign.png' alt="sign_image" />
+          
         </div>
       </div>
     </div>

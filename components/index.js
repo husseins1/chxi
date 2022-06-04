@@ -3,6 +3,7 @@ import Newsletter from './Footer/Newsletter';
 import FooterOverlay from './Footer/FooterOverlay';
 import MenuItem from './MenuItem/MenuItem';
 import Navbar from './Navbar/Navbar';
+import Model from "./Model/Model"
 
 export {
   SubHeading,
@@ -10,4 +11,5 @@ export {
   FooterOverlay,
   MenuItem,
   Navbar,
+  Model
 };

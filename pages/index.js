@@ -7,11 +7,12 @@ import {
   Gallery,
   Header,
   Intro,
-  Laurels,
+ 
   SpecialMenu,
 } from "../container";
 import { Navbar } from "../components";
 import { getHome } from "../services";
+import styles from "../styles/Home.module.css";
 
 
 
@@ -21,14 +22,13 @@ export default function Home({hero:{heroes,abouts,categories,galleries,words}}) 
 
   
   return (
-    <div>
+    <div className={styles.en}>
       <Navbar />
       <Header content={heroes[0]} />
       <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
       <Chef content={words[0]} />
       <Intro />
-      <Laurels />
       <Gallery content={galleries} />
       <FindUs />
       <Footer />
@@ -43,5 +43,6 @@ export async function getStaticProps() {
     props: {
       hero,
     },
+    revalidate: 60,
   };
 }

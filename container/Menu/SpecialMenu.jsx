@@ -1,10 +1,14 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 import { SubHeading, MenuItem } from '../../components';
 import { data } from '../../constants';
 
 
-const SpecialMenu = ({ content }) => (
+const SpecialMenu = ({ content }) =>{ 
+  const router = useRouter();
+  return(
   <>
     <style jsx>
       {`
@@ -99,7 +103,7 @@ const SpecialMenu = ({ content }) => (
     <div className="app__specialMenu flex__center section__padding" id="menu">
       <div className="app__specialMenu-title">
         <SubHeading title="Menu that fits your palatte" />
-        <h1 className="headtext__cormorant">Today&apos;s Special</h1>
+        <h1 className="headtext__cormorant">{router.pathname.includes("ar")?"اختصاصنا":"Today Special"}</h1>
       </div>
 
       <div className="app__specialMenu-menu">
@@ -118,7 +122,7 @@ const SpecialMenu = ({ content }) => (
         </div>
 
         <div className="app__specialMenu-menu_img">
-          <img src="/menu.png" alt="menu__img" />
+          <img src="/menu.jpg" alt="menu__img" />
         </div>
 
         <div className="app__specialMenu-menu_cocktails  flex__center">
@@ -138,11 +142,13 @@ const SpecialMenu = ({ content }) => (
 
       <div style={{ marginTop: 15 }}>
         <button type="button" className="custom__button">
-          View More
+          <Link href={router.route.includes("ar") ? "/ar/menu" : "/menu"}>
+            {router.pathname.includes("ar")?"اعرض المزيد":"View More"}
+          </Link>
         </button>
       </div>
     </div>
   </>
-);
+)};
 
 export default SpecialMenu;

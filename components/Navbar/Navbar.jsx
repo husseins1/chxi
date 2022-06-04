@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
@@ -5,6 +7,7 @@ import gericht from "../../assets/gericht.png";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const router = useRouter()
   return (
     <>
       <style jsx>
@@ -26,7 +29,7 @@ export default function Navbar() {
           }
 
           .app__navbar-logo img {
-            width: 150px;
+            width: 90px;
           }
 
           .app__navbar-links {
@@ -106,7 +109,7 @@ export default function Navbar() {
             color: var(--color-golden);
             font-size: 2rem;
             text-align: center;
-            font-family: var(--font-base);
+            font-family: "Avenir";
           }
 
           .app__navbar-smallscreen_links li:hover {
@@ -146,32 +149,39 @@ export default function Navbar() {
       </style>
       <nav className="app__navbar">
         <div className="app__navbar-logo">
-          <img src="/gericht.png" alt="app__logo" />
+          <img src="/logo.svg" alt="app__logo" />
         </div>
         <ul className="app__navbar-links">
           <li className="p__opensans">
-            <a href="#home">Home</a>
+            <a href="#home">
+              {router.pathname.includes("ar") ? "الرئيسية" : "Home"}
+            </a>
           </li>
           <li className="p__opensans">
-            <a href="#about">About</a>
+            <a href="#about">
+              {router.pathname.includes("ar") ? "حول" : "About"}
+            </a>
           </li>
           <li className="p__opensans">
-            <a href="#menu">Menu</a>
+            <Link href={router.route.includes("ar") ? "/ar/menu" : "/menu"}>
+              {router.pathname.includes("ar") ? "قائمة الطعام" : "Menu"}
+            </Link>
+          </li>
+
+          <li className="p__opensans">
+            <a href="#contact">
+              {router.pathname.includes("ar") ? "التواصل" : "Contact"}
+            </a>
           </li>
           <li className="p__opensans">
-            <a href="#awards">Awards</a>
-          </li>
-          <li className="p__opensans">
-            <a href="#contact">Contact</a>
+            <Link href={router.pathname.includes("ar") ? "/" : "/ar"}>
+              {router.pathname.includes("ar") ? "En" : "عربي"}
+            </Link>
           </li>
         </ul>
         <div className="app__navbar-login">
           <a href="#login" className="p__opensans">
-            Log In / Registration
-          </a>
-          <div />
-          <a href="/" className="p__opensans">
-            Book Table
+            {router.pathname.includes("ar") ? "احجز طاولة" : "Book a table"}
           </a>
         </div>
         <div className="app__navbar-smallscreen">
@@ -185,33 +195,45 @@ export default function Navbar() {
               <MdOutlineRestaurantMenu
                 fontSize={27}
                 className="overlay__close"
+                style={{
+                  fontSize: "27px",
+                  color: "var(--color-golden)",
+                  cursor: "pointer",
+
+                  position: "absolute",
+                  top: "20px",
+                  right: "20px",
+                }}
                 onClick={() => setToggleMenu(false)}
               />
               <ul className="app__navbar-smallscreen_links">
                 <li>
                   <a href="#home" onClick={() => setToggleMenu(false)}>
-                    Home
+                    {router.pathname.includes("ar") ? "الرئيسية" : "Home"}
                   </a>
                 </li>
                 <li>
                   <a href="#about" onClick={() => setToggleMenu(false)}>
-                    About
+                    {router.pathname.includes("ar") ? "حول" : "About"}
                   </a>
                 </li>
                 <li>
-                  <a href="#menu" onClick={() => setToggleMenu(false)}>
-                    Menu
-                  </a>
+                  <Link
+                    href={router.route.includes("ar") ? "/ar/menu" : "/menu"}
+                  >
+                    {router.pathname.includes("ar") ? "قائمة الطعام" : "Menu"}
+                  </Link>
                 </li>
-                <li>
-                  <a href="#awards" onClick={() => setToggleMenu(false)}>
-                    Awards
-                  </a>
-                </li>
+
                 <li>
                   <a href="#contact" onClick={() => setToggleMenu(false)}>
-                    Contact
+                    {router.pathname.includes("ar") ? "التواصل" : "Contact"}
                   </a>
+                </li>
+                <li className="p__opensans">
+                  <Link href={router.pathname.includes("ar") ? "/" : "/ar"}>
+                    {router.pathname.includes("ar") ? "En" : "عربي"}
+                  </Link>
                 </li>
               </ul>
             </div>

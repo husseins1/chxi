@@ -4,7 +4,7 @@ import {useState,useRef} from "react";
 import SubHeading from '../SubHeading/SubHeading';
 
 let timer;
-const Newsletter = () => {
+const Newsletter = ({ar}) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [date , setDate] = useState('');
@@ -22,20 +22,26 @@ const Newsletter = () => {
     e.preventDefault();
     clearTimeout(timer);
     if(name.length < 3){
-      setErrors(errors=>({...errors,name:'Name must be at least 3 characters long'}));
+      setErrors(errors=>({...errors,name:ar?"الاسم قصير":'Name must be at least 3 characters long'}));
     }else{
       setErrors(errors=>({...errors,name:''}));
     }
     
     if(!(/^\d+$/.test(phone)) || phone.length < 10 || phone.length > 11){
-      setErrors(errors=>({...errors, phone: 'Phone is not valid'}));
+      setErrors((errors) => ({
+        ...errors,
+        phone: ar ? "الرقم غير صالح" : "Phone is not valid",
+      }));
    
     }else{
       setErrors(errors=>({...errors, phone: ''}));
      
     }
     if(moment(date).isBefore(moment())){
-      setErrors(errors=>({...errors, date: 'Date is not valid'}));
+      setErrors((errors) => ({
+        ...errors,
+        date: ar ? "التاريخ غير صالح" : "Date is not valid",
+      }));
     
       
     }else{
@@ -60,7 +66,10 @@ const Newsletter = () => {
         body: JSON.stringify({ name, phone, date }),
       });
       if (!result.ok) {
-        setErrors((errors) => ({ ...errors, server: "Something went wrong" }));
+        setErrors((errors) => ({
+          ...errors,
+          server: ar ? "خطا في الخادم" : "Something went wrong",
+        }));
         ref.current.classList.remove("remove");
         timer = setTimeout(() => {
           ref.current.classList.add("remove");
@@ -168,9 +177,13 @@ const Newsletter = () => {
       </style>
       <div className="app__newsletter">
         <div className="app__newsletter-heading">
-          <SubHeading title="Newsletter" />
-          <h1 className="headtext__cormorant">Subscribe To Our Newsletter</h1>
-          <p className="p__opensans">And never miss latest Updates!</p>
+          <SubHeading title={ar ? "احجز" : "Book"} />
+          <h1 className="headtext__cormorant">
+            {ar ? "احجز طاولة" : "Book A Table"}
+          </h1>
+          <p className="p__opensans">
+            {ar ? "ولاتفوت الفرصة" : "And Never Miss Opportunity"}
+          </p>
         </div>
         <form onSubmit={submitHandler}>
           <div className="app__newsletter-input flex__center">
@@ -179,14 +192,14 @@ const Newsletter = () => {
               onChange={(e) => setName(e.target.value)}
               required
               type="Name"
-              placeholder="Enter your Name"
+              placeholder={ar ? "اسمك" : "Enter your Name"}
             />
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
               type="tel"
-              placeholder="Enter your Phone Number"
+              placeholder={ar ? "رقم هاتفك" : "Enter your Phone Number"}
             />
             <input
               value={date}
@@ -198,7 +211,7 @@ const Newsletter = () => {
               type="datetime-local"
               placeholder="Enter your Date"
             />
-            <div ref={ref} className="error-panel">
+            <div  ref={ref} className="error-panel">
               {Object.keys(errors).map(
                 (key) =>
                   errors[key] && (
@@ -207,11 +220,15 @@ const Newsletter = () => {
                     </p>
                   )
               )}
-              {success && <p className="success">Sent Successfully</p>}
+              {success && (
+                <p className="success">
+                  {ar ? "تم ارسال بنجاح" : "Sent Successfully"}
+                </p>
+              )}
             </div>
             {success || (
               <button type="submit" className="custom__button">
-                Book
+                {ar ? "احجز" : "Book"}
               </button>
             )}
           </div>

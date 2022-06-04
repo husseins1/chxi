@@ -5,13 +5,13 @@ import { SubHeading } from '../../components';
 
 import styles from "../../styles/Gallery.module.css"
 
-const Gallery = ({content}) => {
+const Gallery = ({content,ar}) => {
  
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
     const { current } = scrollRef;
-    console.log(scrollRef);
+    
 
     if (direction === 'left') {
       current.scrollLeft -= 300;
@@ -173,45 +173,65 @@ const Gallery = ({content}) => {
       </style>
       <div className="app__gallery flex__center">
         <div className="app__gallery-content">
-          <SubHeading title="Instagram" />
-          <h1 className="headtext__cormorant">Photo Gallery</h1>
+          <SubHeading title={ar ? "انستكرام" : "Instagram"} />
+          <h1 className="headtext__cormorant">
+            {ar ? "معرض الصور" : "Photo Gallery"}
+          </h1>
           <p
             className="p__opensans"
             style={{ color: "#AAAAAA", marginTop: "2rem" }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
-            mattis ipsum turpis elit elit scelerisque egestas mu.
+            {ar
+              ? "كلام كتير لازم ينكال هنا بس ماعندي حجي "
+              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu."}
           </p>
           <button type="button" className="custom__button">
-            View More
+            <a target="_blank" href="https://www.instagram.com/chixi.rest/">
+              {ar ? "عرض المزيد" : "View More"}
+            </a>
           </button>
         </div>
         <div className="app__gallery-images">
           <div className="app__gallery-images_container" ref={scrollRef}>
             {content.map((image, index) => (
-              <div
-                className={
-                  "app__gallery-images_card flex__center" +
-                  " " +
-                  styles.app__gallery_images_card
-                }
-                key={`gallery_image-${index + 1}`}
-              >
-                <img loading="lazy" src={image.img.url} alt="gallery_image" />
-                <BsInstagram className={styles.gallery__image_icon} />
-              </div>
+              <a target="_blank" href="https://www.instagram.com/chixi.rest/">
+                <div
+                  className={
+                    "app__gallery-images_card flex__center" +
+                    " " +
+                    styles.app__gallery_images_card
+                  }
+                  key={`gallery_image-${index + 1}`}
+                >
+                  <img loading="lazy" src={image.img.url} alt="gallery_image" />
+                  <BsInstagram className={styles.gallery__image_icon} />
+                </div>
+              </a>
             ))}
           </div>
-          <div className="app__gallery-images_arrows">
-            <BsArrowLeftShort
-              className={styles.gallery__arrow_icon}
-              onClick={() => scroll("left")}
-            />
-            <BsArrowRightShort
-              className={styles.gallery__arrow_icon}
-              onClick={() => scroll("right")}
-            />
-          </div>
+          {ar ? (
+            <div className="app__gallery-images_arrows">
+              <BsArrowRightShort
+                className={styles.gallery__arrow_icon}
+                onClick={() => scroll("right")}
+              />
+              <BsArrowLeftShort
+                className={styles.gallery__arrow_icon}
+                onClick={() => scroll("left")}
+              />
+            </div>
+          ) : (
+            <div className="app__gallery-images_arrows">
+              <BsArrowLeftShort
+                className={styles.gallery__arrow_icon}
+                onClick={() => scroll("left")}
+              />
+              <BsArrowRightShort
+                className={styles.gallery__arrow_icon}
+                onClick={() => scroll("right")}
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

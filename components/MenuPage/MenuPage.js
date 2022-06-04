@@ -1,7 +1,7 @@
 import MenuItem from "../MenuItem/MenuItem";
 import {data} from "../../constants"
 
-export default function MenuPage() {
+export default function MenuPage({showModel,content,title}) {
   return (
     <>
       <style jsx>
@@ -47,14 +47,16 @@ export default function MenuPage() {
         `}
       </style>
       <div className="app__specialMenu-menu_wine  flex__center">
-        <p className="app__specialMenu-menu_heading">Wine & Beer</p>
+        <p className="app__specialMenu-menu_heading">{title}</p>
         <div className="app__specialMenu_menu_items">
-          {data.wines.map((wine, index) => (
-            <MenuItem
-              key={wine.title + index}
-              title={wine.title}
-              price={wine.price}
-              tags={wine.tags}
+          {content.map((item, index) => (
+            <MenuItem 
+
+            showModel={showModel.bind(null, item)}
+              key={item.title + index}
+              title={item.title}
+              price={item.price}
+              tags={item.types}
             />
           ))}
         </div>

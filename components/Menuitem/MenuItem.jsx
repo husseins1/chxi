@@ -1,8 +1,8 @@
-import React from 'react';
 
 
 
-const MenuItem = ({ title, price, tags }) => (
+
+const MenuItem = ({ title, price, tags,showModel }) => (
   <>
     <style jsx>
       {`
@@ -12,6 +12,7 @@ const MenuItem = ({ title, price, tags }) => (
 
           display: flex;
           flex-direction: column;
+          cursor:pointer;
         }
 
         .app__menuitem-head {
@@ -43,7 +44,7 @@ const MenuItem = ({ title, price, tags }) => (
         }
       `}
     </style>
-    <div className="app__menuitem">
+    <div className="app__menuitem" onClick={showModel}>
       <div className="app__menuitem-head">
         <div className="app__menuitem-name">
           <p className="p__cormorant" style={{ color: "#DCCA87" }}>

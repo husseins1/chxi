@@ -19,10 +19,10 @@ export const getHome = async (lang) => {
       categories(
         where: {
           OR: [
-            { title: "Wine & Beer" }
-            { title: "Cocktails" }
-            { title: "كوكتيل" }
-            { title: "عصائر والشرابت" }
+            { title: "Chicken" }
+            { title: "Beef" }
+            { title: "اطباق اللحم" }
+            { title: "اطباق الدجاج" }
           ]
         }
         locales: [$lang]
@@ -46,6 +46,49 @@ export const getHome = async (lang) => {
         who
         quote
         slogan
+      }
+    }
+  `;
+  const result = await request(graphApiEndPoint, query, variables);
+    
+  return result;
+};
+export const getMenu = async (lang) => {
+  const variables ={
+    lang
+  }
+  const query = gql`
+    query Categories($lang: Locale!) {
+      categories(locales: [$lang]) {
+        title
+        img {
+          url
+        }
+      }
+    }
+  `;
+  const result = await request(graphApiEndPoint, query, variables);
+    
+  return result;
+};
+export const getItems = async (lang,title) => {
+  const variables ={
+    lang,
+    title
+  }
+  
+  const query = gql`
+    query Categories($lang: Locale!, $title: String!) {
+      categories(locales: [$lang], where: { title: $title }) {
+        items {
+          img {
+            url
+          }
+          title
+          price
+          description
+          types
+        }
       }
     }
   `;
