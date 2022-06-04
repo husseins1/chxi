@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 import { Model } from "../components";
 import { getItems, getMenu } from "../services";
 import Link from "next/link";
-export default function menu({result:{categories}}) {
+export default function Menu({result:{categories}}) {
   const [select, setSelect] = useState(categories[0].title);
   const [items, setItems] = useState([]);
   const [show, setShow] = useState(false);
