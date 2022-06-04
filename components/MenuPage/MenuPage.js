@@ -1,4 +1,4 @@
-import MenuItem from "../MenuItem/MenuItem";
+import MenuItem from "../Menuitem/Menuitem";
 
 
 export default function MenuPage({showModel,content,title}) {
