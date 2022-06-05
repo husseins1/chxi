@@ -11,7 +11,7 @@ import {
 } from "../../container";
 import { Navbar } from "../../components";
 import { getHome } from "../../services";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/HomeAr.module.css";
 import { useRouter } from "next/router";
 
 export default function Home({

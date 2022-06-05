@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MenuPage from "../../components/MenuPage/MenuPage";
-import styles from "../../styles/Home.module.css";
+import styles from "../../styles/HomeAr.module.css";
 import { useState, useEffect } from "react";
 import { Model } from "../../components";
 import { getItems, getMenu } from "../../services";
