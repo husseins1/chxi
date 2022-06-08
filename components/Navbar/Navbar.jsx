@@ -180,7 +180,7 @@ export default function Navbar() {
         </ul>
         <div className="app__navbar-login">
           <a href="#login" className="p__opensans">
-            {router.pathname.includes("ar") ? "احجز طاولة" : "Book a table"}
+            {router.pathname.includes("ar") ? "اعلام و استفسار" : "Tell Us"}
           </a>
         </div>
         <div className="app__navbar-smallscreen">

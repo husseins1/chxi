@@ -11,15 +11,15 @@ const graphQLClient = new GraphQLClient(endPoint, {
 const body = JSON.parse(req.body);
   const variables = {
     name:body.name,
-    phone:body.phone,
-    date:body.date
+    email:body.email,
+    message:body.message
   }
  
   
   const mutat = gql`
-    mutation book($name: String! $phone: String! $date: String!) {
+    mutation book($name: String! $email: String! $message: String!) {
       createBooking(
-        data: { name:$name phone: $phone, date: $date }
+        data: { name:$name email: $email, message: $message }
       ) {
         name
       }

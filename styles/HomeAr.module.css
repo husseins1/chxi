@@ -28,6 +28,9 @@
     font-family: 'Noor', serif;
 
 }
+/* *{
+    font-family: 'Noor', serif !important;
+} */
 
 .logo {
     width: 120px;

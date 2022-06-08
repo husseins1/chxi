@@ -1,7 +1,6 @@
 import Head from "next/head";
 import {
   AboutUs,
-  Chef,
   FindUs,
   Footer,
   Gallery,
@@ -33,7 +32,7 @@ export default function Home({
       <Header content={heroes[0]} />
       <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
-      <Chef ar={ar} content={words[0]} />
+      {/* <Chef ar={ar} content={words[0]} /> */}
       <Intro />
       <Gallery ar={ar} content={galleries} />
       <FindUs ar={ar} />

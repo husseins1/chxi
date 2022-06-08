@@ -1,7 +1,6 @@
 import Head from "next/head";
 import {
   AboutUs,
-  Chef,
   FindUs,
   Footer,
   Gallery,
@@ -33,7 +32,7 @@ export default function Home({hero:{heroes,abouts,categories,galleries,words}}) 
       <Header content={heroes[0]} />
       <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
-      <Chef content={words[0]} />
+      {/* <Chef content={words[0]} /> */}
       <Intro />
       <Gallery content={galleries} />
       <FindUs />

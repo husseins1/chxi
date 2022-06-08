@@ -44,7 +44,7 @@ const AboutUs = ({ content }) => {
           }
 
           .app__aboutus-content_knife img {
-            height: 910px;
+            height: 310px;
           }
 
           .app__aboutus-content_history {
@@ -111,7 +111,7 @@ const AboutUs = ({ content }) => {
           </div>
 
           <div className="app__aboutus-content_knife flex__center">
-            <img src="knife.png" alt="about_knife" />
+            <img src="knife.jpg" alt="about_knife" />
           </div>
 
           <div className="app__aboutus-content_history">

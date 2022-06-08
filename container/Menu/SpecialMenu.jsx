@@ -101,7 +101,7 @@ const SpecialMenu = ({ content }) =>{
     </style>
     <div className="app__specialMenu flex__center section__padding" id="menu">
       <div className="app__specialMenu-title">
-        <SubHeading title="Menu that fits your palatte" />
+        <SubHeading title={router.pathname.includes("ar")?"قائمة الطعام المختصة":"Menu that fits your palatte"} />
         <h1 className="headtext__cormorant">{router.pathname.includes("ar")?"اختصاصنا":"Today Special"}</h1>
       </div>
 
