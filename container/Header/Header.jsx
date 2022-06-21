@@ -33,8 +33,8 @@ const Header = ({content}) => {
           }
           .hero__img {
             border: 10px solid var(--color-golden);
-            width: 510px;
-            height: 510px;
+            max-width: 510px;
+            max-height: 510px;
             object-fit: cover;
             display: block;
           }

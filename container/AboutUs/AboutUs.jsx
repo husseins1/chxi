@@ -65,12 +65,16 @@ const AboutUs = ({ content }) => {
             // bottom: 0;
             // height: 90%;
           }
+          .bag{
+            width:90%;
+          }
           @media screen and (min-width: 1200px) {
             .bag {
               position: absolute;
               right: 0;
               bottom: 0;
               height: 90%;
+              width:unset;
             }
             .app__aboutus-content_history {
               position: absolute;
@@ -112,6 +116,7 @@ const AboutUs = ({ content }) => {
               width: 80%;
               height: 320px;
             }
+            
           }
         `}
       </style>
