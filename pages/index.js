@@ -28,8 +28,10 @@ export default function Home({hero:{heroes,abouts,categories,galleries,words}}) 
         <meta name="description" content="Chxi is a restaurant in the heart of the city of Najaf, Iraq. We offer a wide range of food and drinks, from the best of the best in the world." />
       
       </Head>
+      <div className={styles.heroContainer}>
       <Navbar />
       <Header content={heroes[0]} />
+        </div>
       <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
       {/* <Chef content={words[0]} /> */}

@@ -11,6 +11,7 @@ const AboutUs = ({ content }) => {
         {`
           .app__aboutus {
             position: relative;
+            min-height: 100vh;
           }
 
           .app__aboutus-overlay {
@@ -48,19 +49,41 @@ const AboutUs = ({ content }) => {
           }
 
           .app__aboutus-content_history {
-            flex: 1;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
             flex-direction: column;
+            // position: absolute;
+            // width: 500px;
+            // right: 50%;
 
-            text-align: left;
+            text-align: ${router.pathname.includes("ar") ? "right" : "left"};
+          }
+          .bag {
+            // position: absolute;
+            // right: 0;
+            // bottom: 0;
+            // height: 90%;
+          }
+          @media screen and (min-width: 1200px) {
+            .bag {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              height: 90%;
+            }
+            .app__aboutus-content_history {
+              position: absolute;
+              width: 500px;
+              right: 50%;
+            }
           }
 
           .app__aboutus-content_about p,
           .app__aboutus-content_history p {
             margin: 2rem 0;
-            color: var(--color-grey);
+            // color: var(--color-grey);
+            color: white;
           }
 
           @media screen and (min-width: 2000px) {
@@ -97,7 +120,7 @@ const AboutUs = ({ content }) => {
         id="about"
       >
         <div className="app__aboutus-content flex__center">
-          <div className="app__aboutus-content_about">
+          {/* <div className="app__aboutus-content_about">
             <h1 className="headtext__cormorant">
               {router.pathname.includes("ar") ? "حول" : "About Us"}
             </h1>
@@ -108,15 +131,15 @@ const AboutUs = ({ content }) => {
                 {router.pathname.includes("ar") ? "اعرف اكثر" : "Know More"}
               </a>
             </button>
-          </div>
+          </div> */}
 
-          <div className="app__aboutus-content_knife flex__center">
-            <img src="knife.jpg" alt="about_knife" />
-          </div>
+          {/* <div className="app__aboutus-content_knife flex__center"> */}
+          <img className="bag" src="2021.png" alt="about_knife" />
+          {/* </div> */}
 
           <div className="app__aboutus-content_history">
             <h1 className="headtext__cormorant">
-              {router.pathname.includes("ar") ? "تاريخنا" : "Our History"}
+              {router.pathname.includes("ar") ? "حول" : "About Us"}
             </h1>
             <img src="/spoon.png" alt="about_spoon" className="spoon__img" />
             <p className="p__opensans">{content.historyOf}</p>

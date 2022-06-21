@@ -31,6 +31,9 @@
 /* *{
     font-family: 'Noor', serif !important;
 } */
+.heroContainer{
+    background: url("/bg.svg");
+}
 
 .logo {
     width: 120px;

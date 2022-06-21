@@ -16,9 +16,9 @@ export default function Navbar() {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--color-black);
+            background: none;
 
-            padding: 1rem 2rem;
+            padding: 2rem 2rem;
           }
 
           .app__navbar-logo {

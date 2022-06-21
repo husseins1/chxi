@@ -19,17 +19,25 @@ export default function Home({
     const {pathname} = useRouter();
     const ar = pathname.includes("ar");
   return (
+    <>
+      <style jsx>
+        {`
+          .container {
+            
+            
+          }
+          `}
+      </style>
     <div dir="rtl" className={styles.en}>
       <Head>
         <title>Chxi</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta
-          name="description"
-          content="مطعم تشكسي, مطعم عراقي لكل عراقي"
-        />
+        <meta name="description" content="مطعم تشكسي, مطعم عراقي لكل عراقي" />
       </Head>
-      <Navbar />
-      <Header content={heroes[0]} />
+      <div className={styles.heroContainer}>
+        <Navbar />
+        <Header content={heroes[0]} />
+      </div>
       <AboutUs content={abouts[0]} />
       <SpecialMenu content={categories} />
       {/* <Chef ar={ar} content={words[0]} /> */}
@@ -38,12 +46,13 @@ export default function Home({
       <FindUs ar={ar} />
       <Footer ar={ar} />
     </div>
+</>
   );
 }
 
 export async function getStaticProps() {
   const hero = await getHome("ar");
-
+  
   return {
     props: {
       hero,

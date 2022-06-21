@@ -43,7 +43,7 @@ const Footer = ({ ar }) => (
 
         .app__footer-links_logo img:first-child {
           width: 210px;
-          margin-bottom: 0.75rem;
+          margin-bottom: 1.5rem;
         }
 
         .app__footer-links_work p:nth-child(2n + 1) {
@@ -67,8 +67,8 @@ const Footer = ({ ar }) => (
 
         .app__footer-headtext {
           font-family: var(--font-base);
-          color: var(--color-white);
-          font-weight: 400;
+          color: var(--color-golden);
+          font-weight: 600;
           letter-spacing: 0.04em;
           text-transform: capitalize;
           font-size: 32px;
@@ -113,6 +113,11 @@ const Footer = ({ ar }) => (
             width: 80%;
           }
         }
+        .appLink{
+          color:var(--color-golden);
+          display:block;
+        }
+        
       `}
     </style>
     <div className="app__footer section__padding" id="login">
@@ -122,31 +127,36 @@ const Footer = ({ ar }) => (
       <div className="app__footer-links">
         <div className="app__footer-links_contact">
           <h1 className="app__footer-headtext">
-            {ar ? "تواصل معنا" : "Contact Us"}
+            {ar ? "زورونا" : "تواصل معنا"}
           </h1>
           <p className="p__opensans">
             {ar
-              ? "النجف شارع الحزام الاخضر عمارة بيتزا بيتزا"
+              ? "العراق-النجف الاشرف-شارع الحزام الاخضر"
               : "Najaf, Green belt street"}
           </p>
-          <p className="p__opensans">{ar ? "للتوصيل" : "Delivery"}</p>
-          <p className="p__opensans">{ar ? "اتصل على 6464" : "Call 6464"}</p>
+          <p className="p__opensans">{ar ? "او اتصل على الرقم المختصر" : "Delivery"}</p>
+          <p className="p__opensans">{ar ? " 6464" : "Call 6464"}</p>
         </div>
 
         <div className="app__footer-links_logo">
-          <img src="/logo.svg" alt="footer_logo" />
+          <img className="logo_img" src="/logo.svg" alt="footer_logo" />
           <p className="p__opensans">
             &quot;
             {ar
-              ? "افضل طريقة لتوجد نفسك هي ان تضيع في خدمة الاخرين"
-              : "The best way to find yourself is to lose yourself in the service of others."}
+              ? "براند عراقي لكل عراقي"
+              : "Iraqi brand for every Iraqi"}
             &quot;
           </p>
-          <img
-            src="/spoon.png"
-            className="spoon__img"
-            style={{ marginTop: 15 }}
-          />
+            <img
+              src="/app-store-brands.svg"
+              className="spoon__img"
+              style={{ marginTop: 15 }}
+            />
+          <a className='appLink' href="https://miro.com/app/board/uXjVOr5Pfig=/?moveToWidget=3458764527890924691&cot=14">
+            {
+              ar?"حمل التطبيق ":"download app"
+            }
+          </a>
           <div className="app__footer-links_icons">
             <FiFacebook />
             <FiTwitter />

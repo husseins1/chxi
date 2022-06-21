@@ -63,3 +63,6 @@
   cursor: pointer;
   
 }
+.heroContainer {
+  background: url("/bg.svg");
+}
