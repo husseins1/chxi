@@ -113,11 +113,10 @@ const Footer = ({ ar }) => (
             width: 80%;
           }
         }
-        .appLink{
-          color:var(--color-golden);
-          display:block;
+        .appLink {
+          color: var(--color-golden);
+          display: block;
         }
-        
       `}
     </style>
     <div className="app__footer section__padding" id="login">
@@ -134,7 +133,9 @@ const Footer = ({ ar }) => (
               ? "العراق-النجف الاشرف-شارع الحزام الاخضر"
               : "Najaf, Green belt street"}
           </p>
-          <p className="p__opensans">{ar ? "او اتصل على الرقم المختصر" : "Delivery"}</p>
+          <p className="p__opensans">
+            {ar ? "او اتصل على الرقم المختصر" : "Delivery"}
+          </p>
           <p className="p__opensans">{ar ? " 6464" : "Call 6464"}</p>
         </div>
 
@@ -142,20 +143,19 @@ const Footer = ({ ar }) => (
           <img className="logo_img" src="/logo.svg" alt="footer_logo" />
           <p className="p__opensans">
             &quot;
-            {ar
-              ? "براند عراقي لكل عراقي"
-              : "Iraqi brand for every Iraqi"}
+            {ar ? "براند عراقي لكل عراقي" : "Iraqi brand for every Iraqi"}
             &quot;
           </p>
-            <img
-              src="/app-store-brands.svg"
-              className="spoon__img"
-              style={{ marginTop: 15 }}
-            />
-          <a className='appLink' href="https://miro.com/app/board/uXjVOr5Pfig=/?moveToWidget=3458764527890924691&cot=14">
-            {
-              ar?"حمل التطبيق ":"download app"
-            }
+          <img
+            src="/app-store-brands.svg"
+            className="spoon__img"
+            style={{ marginTop: 15 }}
+          />
+          <a
+            className="appLink"
+            href="https://miro.com/app/board/uXjVOr5Pfig=/?moveToWidget=3458764527890924691&cot=14"
+          >
+            {ar ? "حمل التطبيق " : "download app"}
           </a>
           <div className="app__footer-links_icons">
             <FiFacebook />
@@ -179,7 +179,7 @@ const Footer = ({ ar }) => (
         <p className="p__opensans">
           Developed by{" "}
           <a
-            href="https://new-panda-portfolio.vercel.app/"
+            href="https://panda-prog.com/"
             style={{ color: "var(--color-golden)", fontWeight: "bold" }}
           >
             Panda
